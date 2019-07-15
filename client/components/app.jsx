@@ -6,7 +6,7 @@ import GradeTable from './gradeTable.jsx';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {grades:[]};
+    this.state = { grades: [] };
   }
 
   componentDidMount() {

@@ -12,6 +12,7 @@ class App extends React.Component {
 
     this.getAverageGrade = this.getAverageGrade.bind(this);
     this.postGrade = this.postGrade.bind(this);
+    this.deleteGrade = this.deleteGrade.bind(this);
   }
 
   componentDidMount() {
@@ -46,9 +47,25 @@ class App extends React.Component {
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify(data)
     })
+      .then(res => res.json())
       .then(myJson => {
-        let newArr = this.state.grades.concat(data);
+        let newArr = this.state.grades.concat(myJson);
         this.setState({ grades: newArr });
+      });
+
+  }
+
+  deleteGrade(data) {
+    fetch('/api/grades/' + data, {
+      method: 'DELETE',
+      headers: { 'content-type': 'application/json' }
+    })
+      .then(res => res.json())
+      .then(myJson => {
+        let deleteArr = this.state.grades.filter(studentObj => {
+          return studentObj.id !== data;
+        });
+        this.setState({ grades: deleteArr });
       });
   }
 
@@ -57,7 +74,9 @@ class App extends React.Component {
       <div >
         <Header averageGrade={this.getAverageGrade}/>
         <GradeForm addGrade={this.postGrade}/>
-        <GradeTable grades={this.state.grades}/>
+        <GradeTable grades={this.state.grades}
+          deleteGrade={this.deleteGrade}
+        />
       </div>
     );
   }

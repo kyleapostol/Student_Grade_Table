@@ -6,7 +6,7 @@ class GradeForm extends React.Component {
     this.state = {
       name: '',
       course: '',
-      grade: 0
+      grade: ''
     };
 
     this.handleNameChange = this.handleNameChange.bind(this);
@@ -32,11 +32,10 @@ class GradeForm extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     this.props.addGrade(this.state);
-
   }
 
   handleReset() {
-    this.setState({ name: '', course: '', grade: 0 });
+    this.setState({ name: '', course: '', grade: '' });
   }
 
   render() {
@@ -61,8 +60,11 @@ class GradeForm extends React.Component {
               value={this.state.grade}
             />
           </div>
-          <button type="submit" className="btn btn-primary">Add</button>
-          <button type="reset" value="clear all" className="btn btn-primary" onClick={this.handleReset}>Cancel</button>
+          <button type="submit" className="btn btn-success">Add</button>
+          <button type="reset" value="clear all"
+            className="btn btn-light"
+            onClick={this.handleReset}>Cancel
+          </button>
         </form>
       </div>
     );

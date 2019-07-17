@@ -6,8 +6,8 @@ class Header extends React.Component {
     return (
       <div>
         <h1>Student Grade Table</h1>
-        <h3>Average Grade:
-          <span className={'badge badge-secondary'}>{average}</span>
+        <h3>
+          <span className={'badge badge-secondary float-right mt-2 mr-2'}>Average Grade:{average}</span>
         </h3>
       </div>
     );

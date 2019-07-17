@@ -17,6 +17,42 @@
       "course": "Web Development",
       "grade": 50,
       "id": 3
+    },
+    {
+      "name": "kyle",
+      "course": "Cs",
+      "grade": "90",
+      "id": 4
+    },
+    {
+      "name": "DAN",
+      "course": "Web",
+      "grade": "75",
+      "id": 5
+    },
+    {
+      "name": "DAN",
+      "course": "Web",
+      "grade": "75.8",
+      "id": 6
+    },
+    {
+      "name": "kyle apostol",
+      "course": "Any",
+      "grade": "90",
+      "id": 7
+    },
+    {
+      "name": "kyle apostol",
+      "course": "Any",
+      "grade": "90",
+      "id": 8
+    },
+    {
+      "name": "Kyle",
+      "course": "Math",
+      "grade": "80",
+      "id": 9
     }
   ]
 }
